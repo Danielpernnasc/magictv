@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MagicTV | Criar Usuário</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/logo_mtv.ico"/>
+    <!--global styles-->
+    <link type="text/css" rel="stylesheet" href="css/components.css" />
+    <link type="text/css" rel="stylesheet" href="css/custom.css" />
+    <link type="text/css" rel="stylesheet" href="vendors/chartist/css/chartist.min.css" />
+    <link type="text/css" rel="stylesheet" href="vendors/circliful/css/jquery.circliful.css">
+    <link type="text/css" rel="stylesheet" href="css/pages/index.css">
+    <link type="text/css" rel="stylesheet" href="#" id="skin_change" />
+
+</head>
+<body class="body">
+    <div class="preloader" style=" position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 100000;
+        backface-visibility: hidden;
+        background: #ffffff;">
+          <div class="preloader_img" style="width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 48%;
+        top: 48%;
+        background-position: center;
+      z-index: 999999">
+              <img src="img/loader.gif" style=" width: 50px;" alt="loading...">
+          </div>
+      </div>
+      <di id="wrap">
+            <div id="top">
+                <!-- .navbar -->
+                <nav class="nav_magic ">
+                    <div class="container-fluid m-0">
+                        <div class="row nav_desktop">
+                            <div class="col-md-2">
+                                <a class="" href="index.html">
+                                    <img src="img/logo_mtv.png"  alt="" style="width: 120px; display: block; margin: 0 auto;">
+                                </a>  
+                            </div>
+                            <div class="col-md-10">
+                                <div class="row" style="margin: 10px 0 23px 0;">
+                                    <div class="col-md-10" style="padding: 0;">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="menu mr-sm-auto">
+                                                    <span class="toggle-left" id="menu-toggle">
+                                                        <i class="fa fa-bars"></i>
+                                                    </span>
+                                                    &nbsp;
+                                                    <span style="font-size: 20px; color:#f3509b;">
+                                                        <strong style="color:#a34696;">MagicTV</strong>Connect
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 col-sm-offset-2">
+                                                <form class="serachMag header_input_search">
+                                                    <input type="text" placeholder="Buscar" name="search">
+                                                    <button type="submit">
+                                                        <span class="font-icon-search"></span>
+                                                    </button>
+                                                    <div class="overlay"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2" >
+                                        <div class="topnav dropdown-menu-right">
+                                            <div class="btn-group">
+                                                <div class="user-settings no-bg">
+                                                    <i class="fa fa-user admin_img2 img-usuario rounded-circle avatar-img"></i>
+                                                    <button type="button" class="btn btn-default no-bg micheal_btn" data-toggle="dropdown">
+                                                        <strong>Usuário Magic TV</strong>
+                                                        <span class="fa fa-sort-down white_bg"></span>
+                                                    </button>
+                                                    <div class="dropdown-menu admire_admin">
+                                                        <a class="dropdown-item" href="edit_user.html"><i class="fa fa-cogs"></i>
+                                                            Informações</a>
+                                                        <a class="dropdown-item" href="login2.html"><i class="fa fa-angle-double-down"></i>
+                                                            Finalizar Sessão</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 main_magic">
+                                        <div class="no-gutters">
+                                            <div class="col-lg-5">
+                                                <h4 class="nav_top_align"><i class="fa fa-users"></i> &nbsp; Perfil do Usuário</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav_mobile">
+                            <div class="row flex_magic">
+                                <div class="col-md-2">
+                                    <a class="" href="index.html">
+                                        <img src="img/logo_mtv.png"  alt="" style="width: 120px; display: block; margin: 0 auto;">
+                                    </a>  
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="row" style="margin: 10px 0 23px 0;">
+                                        <div class="col-md-10" style="padding: 0;">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="menu mr-sm-auto">
+                                                        <span class="toggle-left" id="menu-toggle">
+                                                            <i class="fa fa-bars"></i>
+                                                        </span>
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="row flex_magic">
+                                <div class="col-md-2">
+                                    <div class="btn-group small_device_search" data-toggle="modal"
+                                            data-target="#search_modal">
+                                            <span>Buscar</span> &nbsp; &nbsp; &nbsp;  <span><i class="fa fa-search text-lupa-mobile"></i></span>  
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="btn-group">
+                                        <div class="user-settings no-bg">
+                                                <i class="fa fa-user admin_img2 img-usuario rounded-circle avatar-img"></i>
+                                                <button type="button" class="btn btn-default no-bg micheal_btn" data-toggle="dropdown">
+                                                    <strong>Usuário Magic TV</strong>
+                                                    <span class="fa fa-sort-down white_bg"></span>
+                                                </button>
+                                                <div class="dropdown-menu admire_admin">
+                                                    <a class="dropdown-item" href="edit_user.html"><i class="fa fa-cogs"></i>
+                                                        Informações</a>
+                                                    <a class="dropdown-item" href="login2.html"><i class="fa fa-angle-double-down"></i>
+                                                        Finalizar Sessão</a>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 main_magic">
+                                    <div class="no-gutters">
+                                        <div class="col-lg-5">
+                                            <h4 class="nav_top_align"><i class="fa fa-user"></i> &nbsp; Perfil do Usuário</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+                    <!-- /.container-fluid -->
+                </nav>
+                <!-- /.navbar -->
+                <!-- /.head -->
+            </div>
+            <div class="wrapper">
+                    <div id="left">
+                        <div class="menu_scroll">
+                            <div class="left_media">
+                                <div class="media user-media">
+                                    <div class="user-media-toggleHover">
+                                        <span class="fa fa-user"></span>
+                                    </div>
+                                    <div class="user-wrapper flex_magic">
+                                            <div class="media-object img-thumbnail user-img rounded-circle admin_img3 ">
+                                            
+                                                    <i class="fa fa-user usuario_magic"></i>
+                                                                
+                                                </div>
+                                        <a class="user-link" href="#">
+                                        
+                                            <p class="user-info menu_hide">Bem-vindo(a)<br>Usuário Magic TV</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <hr/>
+                            </div>
+                            <ul id="menu">
+                                <li class="dropdown_menu" class="active">
+                                    <a class="link_users" href="javascript:;">
+                                        <i class="fa fa-users"></i>
+                                        <span class="link_users link-title menu_hide">&nbsp;Usuários</span>
+                                        <span class="link_users fa arrow menu_hide"></span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="general_components.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Criar Usuário
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="cards.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                <span class="link-title">&nbsp;Perfil do Usuário</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="transitions.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Lista de Usuários
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown_menu">
+                                    <a class="link_app" href="javascript:;">
+                                        <i class="fa fa-share-alt"></i>
+                                        <span class="link-title menu_hide">&nbsp; Aplicativos</span>
+                                        <span class="fa arrow menu_hide"></span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="widgets1.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Criar Aplicativo
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="widgets2.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Lista de Aplicativos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="widgets3.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                <span class="link-title">&nbsp; Metadados de Aplicativos</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="widgets3.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                <span class="link-title">&nbsp; Contatos</span>
+                                            </a>
+                                        </li>
+                                </ul>
+                                </li>
+                                <li class="dropdown_menu">
+                                    <a class="link_slide" href="javascript:;">
+                                        <i class="fa fa-sliders"></i>
+                                        <span class="link-title menu_hide">&nbsp; Apresentações</span>
+                                        <span class="fa arrow menu_hide"></span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="form_elements.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Criar Apresentação
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="form_layouts.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Lista de Apresentações
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown_menu">
+                                    <a class="otherlink" href="#">
+                                        <i class="fa fa-line-chart"></i>
+                                        <span class="link-title menu_hide">&nbsp;Push Notification</span>
+                                        <span class="fa arrow menu_hide"></span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="simple_tables.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Criar Mensagem
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="simple_datatables.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                <span class="link-title">&nbsp; Lista de Mensagens </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="datatables.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Criar Certificado
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="advanced_tables.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Lista de Certificados
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown_menu">
+                                    <a class="otherlink"  href="#">
+                                        <i class="fa fa-cog"></i>
+                                        <span class="link-title menu_hide">&nbsp; Configurações</span>
+                                        <span class="fa arrow menu_hide"></span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="charts.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Tipos de Arquivos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="advanced_charts.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Resoluções
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="chartist.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; User Agent
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="rickshaw.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Tipos de Conexão
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="rickshaw.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Versões da API
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="rickshaw.html">
+                                                <i class="fa fa-angle-right"></i>
+                                                &nbsp; Grupos de Acesso
+                                            </a>
+                                        </li>
+            
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- /#menu -->
+                        </div>
+                    </div>
+                <!-- /#left -->
+                <div id="content" class="bg-container">
+                    <header class="head">
+                    </header>
+                    <div class="outer">
+                        <div class="inner bg-container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card_criar_usuario">
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="row" style="margin-top: 70px;">
+                                                    <div class="col-md-3">
+                                                        <div class="perfilusuario">
+                                                            <i class="fa fa-user"></i>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2"></div>
+                                                            <div class="col-md-8">
+                                                                <button class="selecimage">Selecionar Imagem</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="row">
+                                                            <div class="col-sm-2 details">
+                                                                <h3>Detalhes</h3>
+                                                            </div>
+                                                            <div class="col-sm-4 text-sm-right">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-2 border_preen"></div>
+                                                            <div class="col-sm-4 border_detalhes"></div>
+                                                        </div>
+                                                        <div class="box_details">
+                                                            <div class="row margin_details">
+                                                                <div class="col-sm-6 text-sm-left">
+                                                                    <span>Nome do Usuário</span>
+                                                                </div>
+                                                                <div class="col-sm-3 text-sm-left">
+                                                                    <span>Junior</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row margin_details">
+                                                                <div class="col-sm-6 text-sm-left">
+                                                                    <span>Email</span>
+                                                                </div>
+                                                                <div class="col-sm-3 text-sm-left">
+                                                                    <span>junior@grafite.com.br</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row margin_details">
+                                                                <div class="col-sm-6 text-sm-left">
+                                                                    <span>Senha</span>
+                                                                </div>
+                                                                <div class="col-sm-3 text-sm-left">
+                                                                    <span>Jr@2017</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row margin_details">
+                                                                <div class="col-sm-6 text-sm-left">
+                                                                    <span>Criado em</span>
+                                                                </div>
+                                                                <div class="col-sm-3 text-sm-left">
+                                                                    <span>17/10/2017</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-2"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="card m-t-35">
+                                                    <div class="card-header bg-gray">
+                                                        <div>
+                                                            <i class="fa fa-clock-o"></i>
+                                                            Atividades Recentes
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body m-t-35 padding">
+                                                        <div class="feed">
+
+                                                            <table class="table"   role="grid">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <td>Data</td>
+                                                                        <td>Horário</td>
+                                                                        <td>Ação</td>
+                                                                        <td></td>
+                                                                        
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>21/10/2017</td>
+                                                                        <td>08:56:12</td>
+                                                                        <td>Bloqueio de Apresentação</td>
+                                                                        <td><i class="fa fa-eye"></i></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>19/10/2017</td>
+                                                                        <td>22:13:09</td>
+                                                                        <td>Criação Aplicativo</td>
+                                                                        <td><i class="fa fa-eye"></i></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>18/10/2017</td>
+                                                                        <td>12:15:56</td>
+                                                                        <td>Alteração de Metadado</td>
+                                                                        <td><i class="fa fa-eye"></i></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                       
+                <!-- /.inner -->
+            </div>
+
+      </di>
+    <footer>
+        <h5>Gensis - 2017 ® Todos os Direitos reservados - Desenvolvido por: Magic TV</h5>
+    </footer>
+    
+</body>
+<!-- global scripts-->
+<script type="text/javascript" src="js/components.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<!--  plugin scripts -->
+
+
+<!--end of plugin scripts-->
+
+</html>

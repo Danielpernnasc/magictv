@@ -152,17 +152,39 @@
                             <div class="col-md-2">
                                 <div class="btn-group">
                                     <div class="user-settings no-bg">
-                                        <i class="fa fa-user admin_img2 img-usuario rounded-circle avatar-img"></i>
-                                        <button type="button" class="btn btn-default no-bg micheal_btn" data-toggle="dropdown">
-                                            <strong>Usuário Magic TV</strong>
+                                            <i class="fa fa-user admin_img2 img-usuario rounded-circle avatar-img"></i>
+                                            <button type="button" class="btn btn-default no-bg micheal_btn" data-toggle="dropdown">
+                                                <strong>Usuário Magic TV</strong>
+                                                <span class="fa fa-sort-down white_bg"></span>
+                                            </button>
+                                            <div class="dropdown-menu admire_admin">
+                                                <a class="dropdown-item" href="edit_user.html"><i class="fa fa-cogs"></i>
+                                                    Informações</a>
+                                                <a class="dropdown-item" href="login2.html"><i class="fa fa-angle-double-down"></i>
+                                                    Finalizar Sessão</a>
+                                            </div>
+                                        <!-- <button type="button" class="btn btn-default no-bg micheal_btn" data-toggle="dropdown">
+                                            <img src="img/admin.jpg" class="admin_img2 img-thumbnail rounded-circle avatar-img"
+                                                alt="avatar"> <strong>Micheal</strong>
                                             <span class="fa fa-sort-down white_bg"></span>
                                         </button>
                                         <div class="dropdown-menu admire_admin">
+                                            <a class="dropdown-item title" href="#">
+                                                Admire Admin</a>
                                             <a class="dropdown-item" href="edit_user.html"><i class="fa fa-cogs"></i>
-                                                Informações</a>
-                                            <a class="dropdown-item" href="login2.html"><i class="fa fa-angle-double-down"></i>
-                                                Finalizar Sessão</a>
-                                        </div>
+                                                Account Settings</a>
+                                            <a class="dropdown-item" href="#">
+                                                <i class="fa fa-user"></i>
+                                                User Status
+                                            </a>
+                                            <a class="dropdown-item" href="mail_inbox.html"><i class="fa fa-envelope"></i>
+                                                Inbox</a>
+            
+                                            <a class="dropdown-item" href="lockscreen.html"><i class="fa fa-lock"></i>
+                                                Lock Screen</a>
+                                            <a class="dropdown-item" href="login2.html"><i class="fa fa-sign-out"></i>
+                                                Log Out</a>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -195,9 +217,12 @@
                                 </div>
                                 <div class="user-wrapper flex_magic">
                                         <div class="media-object img-thumbnail user-img rounded-circle admin_img3 ">
-                                            <i class="fa fa-user usuario_magic"></i>
-                                        </div>
+                                        
+                                                <i class="fa fa-user usuario_magic"></i>
+                                                            
+                                            </div>
                                     <a class="user-link" href="#">
+                                    
                                         <p class="user-info menu_hide">Bem-vindo(a)<br>Usuário Magic TV</p>
                                     </a>
                                 </div>
@@ -213,15 +238,13 @@
                                 </a>
                                 <ul>
                                     <li>
-                                    <span @click="reload">
-                                        <router-link to="Criar_Usuario">
+                                        <a href="criar_usuario.html">
                                             <i class="fa fa-angle-right"></i>
                                             &nbsp; Criar Usuário
-                                        </router-link>
-                                    </span>
+                                        </a>
                                     </li>
                                     <li>
-                                        <a href="perfil_usuario.html">
+                                        <a href="cards.html">
                                             <i class="fa fa-angle-right"></i>
                                             <span class="link-title">&nbsp;Perfil do Usuário</span>
                                         </a>
@@ -375,11 +398,11 @@
                 <div id="content" class="bg-container">
                     <header class="head">
                     </header>
-                    <!-- <nav>
+                    <nav>
                         <span @click="reload"><router-link to="/">Usuario</router-link></span>
                         <span @click="reload"><router-link to="Criar_Usuario" @click="reload">Criar Usuario</router-link></span>
                         <span @click="reload"> <router-link to="Sobre_Usuario" @click="reload">Sobre</router-link></span>
-                    </nav> -->
+                    </nav>
                     <div class="outer">
                         <div class="inner bg-container">
                             <router-view></router-view>
@@ -436,8 +459,9 @@
     <script type="text/javascript" src="vendors/circliful/js/jquery.circliful.min.js"></script>
     <script type="text/javascript" src="vendors/flotchart/js/jquery.flot.js" ></script>
     <script type="text/javascript" src="vendors/flotchart/js/jquery.flot.resize.js"></script>
-    <script type="text/javascript" src="js/pages/index.js"></script>
     <!--end of plugin scripts-->
+
+    <script type="text/javascript" src="js/pages/index.js"></script>
     <script type="text/javascript" src="vendors/select2/js/select2.js"></script>
     <script type="text/javascript" src="vendors/datatables/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/pluginjs/dataTables.tableTools.js"></script>
@@ -452,10 +476,9 @@
     <script type="text/javascript" src="vendors/datatables/js/buttons.bootstrap.min.js"></script>
     <script type="text/javascript" src="vendors/datatables/js/buttons.print.min.js"></script>
     <script type="text/javascript" src="vendors/datatables/js/dataTables.scroller.min.js"></script>
-    <script type="text/javascript" src="js/pages/datatable.js"></script>
     <!-- end of plugin scripts -->
         <!--Page level scripts-->
-        
+        <script type="text/javascript" src="js/pages/datatable.js"></script>
         <script src="js/singlepage.js"></script>
 </body>
 

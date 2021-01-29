@@ -67,7 +67,7 @@ var TableAdvanced = function() {
             ],
             "lengthMenu": [
                 [5, 15, 20, -1],
-                [5, 15, 20, "Todos"] // change per page values here
+                [5, 15, 20, "All"] // change per page values here
             ],
             // set the initial value
             "pageLength": 5
@@ -124,7 +124,7 @@ var TableAdvanced = function() {
             ],
             "lengthMenu": [
                 [5, 15, 20, -1],
-                [5, 15, 20, "Todos"] // change per page values here
+                [5, 15, 20, "All"] // change per page values here
             ],
             "pageLength": 15 // set the initial value
         });
@@ -145,7 +145,7 @@ var TableAdvanced = function() {
             ],
             "lengthMenu": [
                 [5, 15, 20, -1],
-                [5, 15, 20, "Todos"] // change per page values here
+                [5, 15, 20, "All"] // change per page values here
             ],
             "pageLength": 5 // set the initial value,
         });
