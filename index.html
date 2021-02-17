@@ -23,9 +23,15 @@
     <link type="text/css" rel="stylesheet" href="css/plugincss/responsive.dataTables.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> 
+    <script src="https://kit.fontawesome.com/199fbc8dd9.js" crossorigin="anonymous"></script>
     <!-- end of plugin styles -->
     <!--Page level styles-->
     <link type="text/css" rel="stylesheet" href="css/pages/tables.css" />
+    <style>
+     .btn_ativo {
+            color: green;
+        }
+    </style>
 
 </head>
 
@@ -109,7 +115,14 @@
                                 <div class="col-md-12 main_magic">
                                     <div class="no-gutters">
                                         <div class="col-lg-5">
-                                            <h4 class="nav_top_align"><i class="fa fa-user"></i> &nbsp; Perfil do Usuário</h4>
+                                            <h4 class="nav_top_align">
+                                                <span @click="reload">
+                                                    <router-link to="Perfil_Usuario">
+                                                        <i class="fa fa-angle-right"></i>
+                                                        &nbsp; &nbsp;Perfil do Usuário
+                                                    </router-link>
+                                                </span>
+                                            </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -171,7 +184,13 @@
                             <div class="col-md-12 main_magic">
                                 <div class="no-gutters">
                                     <div class="col-lg-5">
-                                        <h4 class="nav_top_align"><i class="fa fa-user"></i> &nbsp; Perfil do Usuário</h4>
+                                        <span @click="reload">
+                                            <router-link to="Perfil_Usuario">
+                                                    <h4 class="nav_top_align">
+                                                        <i class="fa fa-user"></i> &nbsp; Perfil do Usuário
+                                                    </h4>
+                                            </router-link>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -221,10 +240,16 @@
                                     </span>
                                     </li>
                                     <li>
-                                        <a href="cards.html">
+                                    <span @click="reload">
+                                        <router-link to="Perfil_Usuario">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; &nbsp;Perfil do Usuário
+                                        </router-link>
+                                    </span>
+                                        <!-- <a href="perfil_usuario.html">
                                             <i class="fa fa-angle-right"></i>
                                             <span class="link-title">&nbsp;Perfil do Usuário</span>
-                                        </a>
+                                        </a> -->
                                     </li>
                                     <li>
                                         <a href="transitions.html">
@@ -453,10 +478,14 @@
     <script type="text/javascript" src="vendors/datatables/js/buttons.print.min.js"></script>
     <script type="text/javascript" src="vendors/datatables/js/dataTables.scroller.min.js"></script>
     <script type="text/javascript" src="js/pages/datatable.js"></script>
+    <script type="text/javascript" src="js/ordem_table.js"></script>
     <!-- end of plugin scripts -->
         <!--Page level scripts-->
         
         <script src="js/singlepage.js"></script>
+        <script src="js/table2csv-master/table2csv.min.js"></script>
+        <script src="js/clipboard_print_csv.js"></script>
+
 </body>
 
 </html>
