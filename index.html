@@ -201,7 +201,7 @@
                                     <ul>
                                         <li>
                                         <span @click="reload">
-                                            <router-link to="Criar_Usuario">
+                                            <router-link class="linksmagic" to="Criar_Usuario">
                                                 <i class="fa fa-angle-right"></i>
                                                 &nbsp; Criar Usuário
                                             </router-link>
@@ -209,7 +209,7 @@
                                         </li>
                                         <li>
                                             <span @click="reload">
-                                                <router-link to="Perfil_Usuario">
+                                                <router-link class="linksmagic"  to="Perfil_Usuario">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Perfil do Usuário
                                                 </router-link>
@@ -217,7 +217,7 @@
                                         </li>
                                         <li>
                                             <span @click="reload">
-                                                <router-link to="Lista_Usuario">
+                                                <router-link class="linksmagic"  to="Lista_Usuario">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Lista de Usuário
                                                 </router-link>
@@ -233,27 +233,37 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="widgets1.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Criar Aplicativo
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic"  to="Criar_Aplicativo">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Criar Aplicativos
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="widgets2.html">
+                                            <!-- <a href="widgets2.html">
                                                 <i class="fa fa-angle-right"></i>
                                                 &nbsp; Lista de Aplicativos
-                                            </a>
+                                            </a> -->
+                                            <span @click="reload">
+                                                <router-link class="linksmagic"  to="Criar_Metadados">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Lista de Aplicativos
+                                                </router-link>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic"  to="Metadados_Aplicativo">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Metadado de Aplicativo
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
                                             <a href="widgets3.html">
                                                 <i class="fa fa-angle-right"></i>
-                                                <span class="link-title">&nbsp; Metadados de Aplicativos</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="widgets3.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                <span class="link-title">&nbsp; Contatos</span>
+                                                <span class="link-title">&nbsp; Contextos</span>
                                             </a>
                                         </li>
                                 </ul>
