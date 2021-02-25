@@ -76,8 +76,11 @@
                                                     <i class="fa fa-bars"></i>
                                                 </span>
                                                 &nbsp;
-                                                <span style="font-size: 20px; color:#f3509b;">
-                                                    <strong style="color:#a34696;">MagicTV</strong>Connect
+                                                <span style="font-size: 30px; color:#a34696;">
+                                                    <strong>MagicTV</strong>
+                                                </span>
+                                                <span style="color:#f3509b; font-size: 30px;">
+                                                        Connect
                                                 </span>
                                             </div>
                                         </div>
@@ -241,12 +244,8 @@
                                             </span>
                                         </li>
                                         <li>
-                                            <!-- <a href="widgets2.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Lista de Aplicativos
-                                            </a> -->
                                             <span @click="reload">
-                                                <router-link class="linksmagic"  to="Criar_Metadados">
+                                                <router-link class="linksmagic"  to="Lista_Aplicativo">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Lista de Aplicativos
                                                 </router-link>
@@ -261,31 +260,37 @@
                                             </span>
                                         </li>
                                         <li>
-                                            <a href="widgets3.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                <span class="link-title">&nbsp; Contextos</span>
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic"  to="Contextos">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Contextos
+                                                </router-link>
+                                            </span>
                                         </li>
                                 </ul>
                                 </li>
                                 <li class="dropdown_menu">
                                     <a class="link_slide" href="javascript:;">
-                                        <i class="fa fa-sliders"></i>
+                                        <i class="fa fa-th-large"></i>
                                         <span class="link-title menu_hide">&nbsp; Apresentações</span>
                                         <span class="fa arrow menu_hide"></span>
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="form_elements.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Criar Apresentação
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Criar_Apresentacao">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Criar Apresentação
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="form_layouts.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Lista de Apresentações
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Lista_Apresentacao">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Lista de Apresentações
+                                                </router-link>
+                                            </span>
                                         </li>
                                     </ul>
                                 </li>
@@ -297,28 +302,36 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="simple_tables.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Criar Mensagem
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Criar_Mensagem">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Criar Mensagem
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="simple_datatables.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                <span class="link-title">&nbsp; Lista de Mensagens </span>
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Lista_Mensagem">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Lista de Mensagens
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="datatables.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Criar Certificado
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Criar_Certificado">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Criar Certificado
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="advanced_tables.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Lista de Certificados
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Lista_Certificado">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Lista de Certificados
+                                                </router-link>
+                                            </span>
                                         </li>
                                     </ul>
                                 </li>
@@ -328,41 +341,65 @@
                                         <span class="link-title menu_hide">&nbsp; Configurações</span>
                                         <span class="fa arrow menu_hide"></span>
                                     </a>
-                                    <ul>
-                                        <li>
-                                            <a href="charts.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Tipos de Arquivos
+                                    <ul style="height: 280px;">
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Tipos de Arquivos<br>
+                                            <a href="">
+                                                Criar Arquivo
+                                            </a>
+                                            <a href="">
+                                                Lista de Arquivos
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="advanced_charts.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Resoluções
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Resoluções
+                                            <a href="">
+                                                Criar Resolução
+                                            </a>
+                                            <a href="">
+                                                Lista de Resoluções
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="chartist.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; User Agent
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; User Agent
+                                            <a href="">
+                                                Criar User Agent
+                                            </a>
+                                            <a href="">
+                                                Lista de Resoluções
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="rickshaw.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Tipos de Conexão
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Tipos de Conexão
+                                            <a href="">
+                                                Criar Tipo de Conexão
+                                            </a>
+                                            <a href="">
+                                                Lista de Conexões
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="rickshaw.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Versões da API
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Versões da API
+                                            <a href="">
+                                                Criar Nova Versão API
+                                            </a>
+                                            <a href="">
+                                                Lista de Versões API
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="rickshaw.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Grupos de Acesso
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Grupos de Acesso
+                                            <a href="">
+                                                Criar Grupo Acesso
+                                            </a>
+                                            <a href="">
+                                                Lista de Grupos Acesso
                                             </a>
                                         </li>
             
@@ -453,13 +490,12 @@
     <script type="text/javascript" src="js/pages/datatable.js"></script>
     <script type="text/javascript" src="js/ordem_table.js"></script>
     <!-- end of plugin scripts -->
-        <!--Page level scripts-->
-        
-        <script src="js/singlepage.js"></script>
-        <script src="js/table2csv-master/table2csv.min.js"></script>
-        <script src="js/clipboard_print_csv.js"></script>
-        <script src="js/uploadnewimagem.js"></script>
-        <script src="js/uploadimage.js"></script>
+    <!--Page level scripts-->
+    <script src="js/singlepage.js"></script>
+    <script src="js/table2csv-master/table2csv.min.js"></script>
+    <script src="js/clipboard_print_csv.js"></script>
+    <script src="js/uploadnewimagem.js"></script>
+    <script src="js/uploadimage.js"></script>
 </body>
 
 </html>

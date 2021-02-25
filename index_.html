@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>MagicTV | Usuário</title>
+    <title>MagicTV</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/logo_mtv.ico"/>
@@ -60,6 +60,7 @@
             <nav class="nav_magic">
                 <div class="container-fluid m-0">
                     <div class="nav_desktop">
+                     
                         <div class="campo_logo">
                             <a class="" href="index.html">
                                 <img class="logo_magic" src="img/logo_mtv.png"  alt="" >
@@ -67,8 +68,7 @@
                         </div>
                         <div class="campo_top_right">
                             <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8">
+                                <div class="col-md-9">
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="menu mr-sm-auto">
@@ -76,12 +76,15 @@
                                                     <i class="fa fa-bars"></i>
                                                 </span>
                                                 &nbsp;
-                                                <span style="font-size: 20px; color:#f3509b;">
-                                                    <strong style="color:#a34696;">MagicTV</strong>Connect
+                                                <span style="font-size: 30px; color:#a34696;">
+                                                    <strong>MagicTV</strong>
+                                                </span>
+                                                <span style="color:#f3509b; font-size: 30px;">
+                                                        Connect
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="col-sm-2 col-sm-offset-2">
+                                        <div class="col-sm-4">
                                             <form class="serachMag header_input_search">
                                                 <input type="text" placeholder="Buscar" name="search">
                                                 <button type="submit">
@@ -92,7 +95,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <div class="topnav dropdown-menu-right">
                                         <div class="btn-group">
                                             <div class="user-settings no-bg">
@@ -191,7 +194,7 @@
                                 </div>
                                 <hr/>
                             </div>
-                            <ul id="menu">
+                            <ul id="menu" >
                                 <li class="dropdown_menu" class="active">
                                     <a class="link_users" href="javascript:;">
                                         <i class="fa fa-users"></i>
@@ -201,7 +204,7 @@
                                     <ul>
                                         <li>
                                         <span @click="reload">
-                                            <router-link to="Criar_Usuario">
+                                            <router-link class="linksmagic" to="Criar_Usuario">
                                                 <i class="fa fa-angle-right"></i>
                                                 &nbsp; Criar Usuário
                                             </router-link>
@@ -209,7 +212,7 @@
                                         </li>
                                         <li>
                                             <span @click="reload">
-                                                <router-link to="Perfil_Usuario">
+                                                <router-link class="linksmagic"  to="Perfil_Usuario">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Perfil do Usuário
                                                 </router-link>
@@ -217,7 +220,7 @@
                                         </li>
                                         <li>
                                             <span @click="reload">
-                                                <router-link to="Lista_Usuario">
+                                                <router-link class="linksmagic"  to="Lista_Usuario">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Lista de Usuário
                                                 </router-link>
@@ -233,49 +236,61 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="widgets1.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Criar Aplicativo
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic"  to="Criar_Aplicativo">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Criar Aplicativos
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="widgets2.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Lista de Aplicativos
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic"  to="Lista_Aplicativo">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Lista de Aplicativos
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="widgets3.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                <span class="link-title">&nbsp; Metadados de Aplicativos</span>
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic"  to="Metadados_Aplicativo">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Metadado de Aplicativo
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="widgets3.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                <span class="link-title">&nbsp; Contatos</span>
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic"  to="Contextos">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Contextos
+                                                </router-link>
+                                            </span>
                                         </li>
                                 </ul>
                                 </li>
                                 <li class="dropdown_menu">
                                     <a class="link_slide" href="javascript:;">
-                                        <i class="fa fa-sliders"></i>
+                                        <i class="fa fa-th-large"></i>
                                         <span class="link-title menu_hide">&nbsp; Apresentações</span>
                                         <span class="fa arrow menu_hide"></span>
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="form_elements.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Criar Apresentação
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Criar_Apresentacao">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Criar Apresentação
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="form_layouts.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Lista de Apresentações
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Lista_Apresentacao">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Lista de Apresentações
+                                                </router-link>
+                                            </span>
                                         </li>
                                     </ul>
                                 </li>
@@ -287,28 +302,36 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="simple_tables.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Criar Mensagem
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Criar_Mensagem">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Criar Mensagem
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="simple_datatables.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                <span class="link-title">&nbsp; Lista de Mensagens </span>
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Lista_Mensagem">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Lista de Mensagens
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="datatables.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Criar Certificado
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Criar_Certificado">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Criar Certificado
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li>
-                                            <a href="advanced_tables.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Lista de Certificados
-                                            </a>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic" to="Lista_Certificado">
+                                                    <i class="fa fa-angle-right"></i>
+                                                    &nbsp; Lista de Certificados
+                                                </router-link>
+                                            </span>
                                         </li>
                                     </ul>
                                 </li>
@@ -319,40 +342,64 @@
                                         <span class="fa arrow menu_hide"></span>
                                     </a>
                                     <ul>
-                                        <li>
-                                            <a href="charts.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Tipos de Arquivos
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Tipos de Arquivos<br>
+                                            <a href="">
+                                                Criar Arquivo
+                                            </a>
+                                            <a href="">
+                                                Lista de Arquivos
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="advanced_charts.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Resoluções
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Resoluções
+                                            <a href="">
+                                                Criar Resolução
+                                            </a>
+                                            <a href="">
+                                                Lista de Resoluções
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="chartist.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; User Agent
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; User Agent
+                                            <a href="">
+                                                Criar User Agent
+                                            </a>
+                                            <a href="">
+                                                Lista de Resoluções
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="rickshaw.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Tipos de Conexão
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Tipos de Conexão
+                                            <a href="">
+                                                Criar Tipo de Conexão
+                                            </a>
+                                            <a href="">
+                                                Lista de Conexões
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="rickshaw.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Versões da API
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Versões da API
+                                            <a href="">
+                                                Criar Nova Versão API
+                                            </a>
+                                            <a href="">
+                                                Lista de Versões API
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="rickshaw.html">
-                                                <i class="fa fa-angle-right"></i>
-                                                &nbsp; Grupos de Acesso
+                                        <li class="lis_config">
+                                            <i class="fa fa-angle-right"></i>
+                                            &nbsp; Grupos de Acesso
+                                            <a href="">
+                                                Criar Grupo Acesso
+                                            </a>
+                                            <a href="">
+                                                Lista de Grupos Acesso
                                             </a>
                                         </li>
             
@@ -362,83 +409,21 @@
                             <!-- /#menu -->
                         </div>
                     </div>
+                    <div id="content" class="bg-container">
+                        <div class="outer">
+                            <div class="inner bg-container">
+                            </div>
+                        </div>     
+                    </div>
                 </div>
+
                 <div class="flex_magic width100cento">
                     <div class="campoleftmagic"></div>
                     <div class="camporightmagic">
-                            <div id="content" class="bg-container">
-                                    <header class="head"></header>
-                                    <div class="outer">
-                                        <div class="inner bg-container">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="row topo_gray">
-                                                        <div class="col-md-12 main_magic">
-                                                            <div class="no-gutters">
-                                                                <div class="col-lg-5">
-                                                                    <h4 class="nav_top_align"><i class="fa fa-home"></i> &nbsp; Página Inicial</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card">
-                                                        <div class="card-header bg-white">
-                                                        <span><i class="fa fa-clock-o"></i></span> <span>Atividades Recentes</span> 
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <div class="table-responsive m-t-35">
-                                                                <table class="table table-striped table-bordered table-hover" id="sample_6">
-                                                                    <thead>
-                                                                    <tr>
-                                                                        <th>Data</th>
-                                                                        <th>Horário</th>
-                                                                        <th>Ação</th>
-                                                                        <th></th>
-                                                                        <th>Usuário</th>
-                                                                    </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td>01/01/2021</td>
-                                                                            <td>00:00:00</td>
-                                                                            <td>Aplicativo>>Criar>>Projeto</td>
-                                                                            <td><i class="fa fa-eye"></i></td>
-                                                                            <td>Usuário</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>02/01/2021</td>
-                                                                            <td>00:00:00</td>
-                                                                            <td>Aplicativo>>Criar>>Projeto</td>
-                                                                            <td><i class="fa fa-eye"></i></td>
-                                                                            <td>Usuário</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>03/01/2021</td>
-                                                                            <td>00:00:00</td>
-                                                                            <td>Aplicativo>>Criar>>Projeto</td>
-                                                                            <td><i class="fa fa-eye"></i></td>
-                                                                            <td>Usuário</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>04/01/2021</td>
-                                                                            <td>00:00:00</td>
-                                                                            <td>Aplicativo>>Criar>>Projeto</td>
-                                                                            <td><i class="fa fa-eye"></i></td>
-                                                                            <td>Usuário</td>
-                                                                        </tr>
-                                                                    </tbody>   
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <router-view></router-view>
                     </div>
-
                 </div>
+                
             </div>
         </div>
     </div>
@@ -512,15 +497,12 @@
     <script type="text/javascript" src="js/pages/datatable.js"></script>
     <script type="text/javascript" src="js/ordem_table.js"></script>
     <!-- end of plugin scripts -->
-        <!--Page level scripts-->
-        
-        <script src="js/singlepage.js"></script>
-        <script src="js/table2csv-master/table2csv.min.js"></script>
-        <script src="js/clipboard_print_csv.js"></script>
-        <script src="js/uploadnewimagem.js"></script>
-        <script src="js/uploadimage.js"></script>
-
-
+    <!--Page level scripts-->
+    <script src="js/singlepage.js"></script>
+    <script src="js/table2csv-master/table2csv.min.js"></script>
+    <script src="js/clipboard_print_csv.js"></script>
+    <script src="js/uploadnewimagem.js"></script>
+    <script src="js/uploadimage.js"></script>
 </body>
 
 </html>
