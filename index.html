@@ -35,7 +35,7 @@
 
 </head>
 
-<body class="body">
+<body id="loaded" class="body">
     <div class="preloader" style=" position: fixed;
     width: 100%;
     height: 100%;
@@ -84,7 +84,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 margintop50px">
                                             <form class="serachMag header_input_search">
                                                 <input type="text" placeholder="Buscar" name="search">
                                                 <button type="submit">
@@ -95,7 +95,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 margintop50px">
                                     <div class="topnav dropdown-menu-right">
                                         <div class="btn-group">
                                             <div class="user-settings no-bg">
@@ -141,7 +141,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row flex_magic">
+                        <div class="row flex_magic margintop10px">
                             <div class="col-md-2">
                                 <div class="btn-group small_device_search" data-toggle="modal"
                                         data-target="#search_modal">
@@ -341,68 +341,104 @@
                                         <span class="link-title menu_hide">&nbsp; Configurações</span>
                                         <span class="fa arrow menu_hide"></span>
                                     </a>
-                                    <ul style="height: 280px;">
+                                    <ul>
                                         <li class="lis_config">
                                             <i class="fa fa-angle-right"></i>
-                                            &nbsp; Tipos de Arquivos<br>
-                                            <a href="">
-                                                Criar Arquivo
-                                            </a>
-                                            <a href="">
-                                                Lista de Arquivos
-                                            </a>
+                                            <span class="bolder">
+                                                &nbsp; Tipos de Arquivos
+                                            <span>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Criar_Arquivo">
+                                                    Criar Arquivo
+                                                </router-link>
+                                            </span>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Lista_Arquivo">
+                                                    Lista de Arquivos
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li class="lis_config">
                                             <i class="fa fa-angle-right"></i>
-                                            &nbsp; Resoluções
-                                            <a href="">
-                                                Criar Resolução
-                                            </a>
-                                            <a href="">
-                                                Lista de Resoluções
-                                            </a>
+                                            <span class="bolder">
+                                                &nbsp; Resoluções
+                                            <span>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Criar_Resolucao">
+                                                    Criar Resolução
+                                                </router-link>
+                                            </span>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Lista_Resolucoes">
+                                                    Lista de Resolução
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li class="lis_config">
                                             <i class="fa fa-angle-right"></i>
-                                            &nbsp; User Agent
-                                            <a href="">
-                                                Criar User Agent
-                                            </a>
-                                            <a href="">
-                                                Lista de Resoluções
-                                            </a>
+                                            <span class="bolder">
+                                                &nbsp; User Agent
+                                            <span>
+                                            <span  @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Criar_UserAgent">
+                                                    Criar User Agent
+                                                </router-link>
+                                            </span>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Lista_UserAgent">
+                                                    Lista de User Agents
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li class="lis_config">
                                             <i class="fa fa-angle-right"></i>
-                                            &nbsp; Tipos de Conexão
-                                            <a href="">
-                                                Criar Tipo de Conexão
-                                            </a>
-                                            <a href="">
-                                                Lista de Conexões
-                                            </a>
+                                            <span class="bolder">
+                                                &nbsp; Tipos de Conexão
+                                            <span>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Criar_Conexao">
+                                                    Criar Tipo de Conexão
+                                                </router-link>
+                                            </span>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Lista_Conexoes">
+                                                        Lista de Conexões
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li class="lis_config">
                                             <i class="fa fa-angle-right"></i>
-                                            &nbsp; Versões da API
-                                            <a href="">
-                                                Criar Nova Versão API
-                                            </a>
-                                            <a href="">
-                                                Lista de Versões API
-                                            </a>
+                                            <span class="bolder">
+                                                &nbsp; Versões da API
+                                            <span>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Criar_NovaAPI">
+                                                    Criar Nova Versão API
+                                                </router-link>
+                                            </span>
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Lista_NovaAPI">
+                                                 Lista de Versões API
+                                                </router-link>
+                                            </span>
                                         </li>
                                         <li class="lis_config">
                                             <i class="fa fa-angle-right"></i>
-                                            &nbsp; Grupos de Acesso
-                                            <a href="">
+                                            <span class="bolder">
+                                                &nbsp; Grupos de Acesso
+                                            </span>
+                                            <!-- <a href="" class="text_decor">
                                                 Criar Grupo Acesso
-                                            </a>
-                                            <a href="">
+                                            </a> -->
+                                            <span @click="reload">
+                                                <router-link class="linksmagic text_decor" to="Criar_GrupoAcesso">
+                                                        Criar Grupo Acesso
+                                                </router-link>
+                                            </span>
+                                            <a href="" class="text_decor">
                                                 Lista de Grupos Acesso
                                             </a>
                                         </li>
-            
                                     </ul>
                                 </li>
                             </ul>
@@ -496,6 +532,16 @@
     <script src="js/clipboard_print_csv.js"></script>
     <script src="js/uploadnewimagem.js"></script>
     <script src="js/uploadimage.js"></script>
+    <!-- <script src="js/reload.js"></script> -->
+    <script>
+        // window.onload = function () {window.location.reload()}
+        // $("div").stop();
+    //     function timedRefresh(timeoutPeriod) {
+	// setTimeout("location.reload(true);",timeoutPeriod);
+    // }
+
+    // window.onload = timedRefresh(1000);
+    // </script>
 </body>
 
 </html>
