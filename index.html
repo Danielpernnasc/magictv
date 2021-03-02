@@ -24,6 +24,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> 
     <script src="https://kit.fontawesome.com/199fbc8dd9.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- end of plugin styles -->
     <!--Page level styles-->
     <link type="text/css" rel="stylesheet" href="css/pages/tables.css" />
@@ -31,6 +32,7 @@
      .btn_ativo {
             color: green;
         }
+
     </style>
 
 </head>
@@ -129,7 +131,7 @@
                                     <div class="col-md-10">
                                         <div class="row">
                                             <div class="col-sm-4">
-                                                <div class="menu mr-sm-auto">
+                                                <div class="menu mr-sm-auto ">
                                                     <span class="toggle-left" id="menu-toggle">
                                                         <i class="fa fa-bars"></i>
                                                     </span>
@@ -203,24 +205,27 @@
                                     </a>
                                     <ul>
                                         <li>
-                                        <span @click="reload">
-                                            <router-link class="linksmagic" to="Criar_Usuario">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                            <router-link  :key="$route.path" class="linksmagic" to="Criar_Usuario">
                                                 <i class="fa fa-angle-right"></i>
                                                 &nbsp; Criar Usuário
                                             </router-link>
                                         </span>
                                         </li>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic"  to="Perfil_Usuario">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link :key="$route.path" class="linksmagic"  to="Perfil_Usuario">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Perfil do Usuário
                                                 </router-link>
                                             </span>
                                         </li>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic"  to="Lista_Usuario">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link  :key="$route.path" class="linksmagic"  to="Lista_Usuario">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Lista de Usuário
                                                 </router-link>
@@ -236,32 +241,36 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic"  to="Criar_Aplicativo">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link :key="$route.path" class="linksmagic"  to="Criar_Aplicativo">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Criar Aplicativos
                                                 </router-link>
                                             </span>
                                         </li>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic"  to="Lista_Aplicativo">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link :key="$route.path" class="linksmagic"  to="Lista_Aplicativo">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Lista de Aplicativos
                                                 </router-link>
                                             </span>
                                         </li>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic"  to="Metadados_Aplicativo">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link :key="$route.path" class="linksmagic"  to="Metadados_Aplicativo">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Metadado de Aplicativo
                                                 </router-link>
                                             </span>
                                         </li>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic"  to="Contextos">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link  :key="$route.path" class="linksmagic"  to="Contextos">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Contextos
                                                 </router-link>
@@ -277,16 +286,18 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic" to="Criar_Apresentacao">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link  :key="$route.path" class="linksmagic" to="Criar_Apresentacao">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Criar Apresentação
                                                 </router-link>
                                             </span>
                                         </li>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic" to="Lista_Apresentacao">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link :key="$route.path" class="linksmagic" to="Lista_Apresentacao">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Lista de Apresentações
                                                 </router-link>
@@ -302,32 +313,36 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic" to="Criar_Mensagem">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link :key="$route.path" class="linksmagic" to="Criar_Mensagem">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Criar Mensagem
                                                 </router-link>
                                             </span>
                                         </li>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic" to="Lista_Mensagem">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link :key="$route.path" class="linksmagic" to="Lista_Mensagem">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Lista de Mensagens
                                                 </router-link>
                                             </span>
                                         </li>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic" to="Criar_Certificado">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link  :key="$route.path" class="linksmagic" to="Criar_Certificado">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Criar Certificado
                                                 </router-link>
                                             </span>
                                         </li>
                                         <li>
-                                            <span @click="reload">
-                                                <router-link class="linksmagic" to="Lista_Certificado">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
+                                                <router-link :key="$route.path" class="linksmagic" to="Lista_Certificado">
                                                     <i class="fa fa-angle-right"></i>
                                                     &nbsp; Lista de Certificados
                                                 </router-link>
@@ -347,12 +362,14 @@
                                             <span class="bolder">
                                                 &nbsp; Tipos de Arquivos
                                             <span>
-                                            <span @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
                                                 <router-link class="linksmagic text_decor" to="Criar_Arquivo">
                                                     Criar Arquivo
                                                 </router-link>
                                             </span>
-                                            <span @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
                                                 <router-link class="linksmagic text_decor" to="Lista_Arquivo">
                                                     Lista de Arquivos
                                                 </router-link>
@@ -363,12 +380,14 @@
                                             <span class="bolder">
                                                 &nbsp; Resoluções
                                             <span>
-                                            <span @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
                                                 <router-link class="linksmagic text_decor" to="Criar_Resolucao">
                                                     Criar Resolução
                                                 </router-link>
                                             </span>
-                                            <span @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
                                                 <router-link class="linksmagic text_decor" to="Lista_Resolucoes">
                                                     Lista de Resolução
                                                 </router-link>
@@ -379,12 +398,14 @@
                                             <span class="bolder">
                                                 &nbsp; User Agent
                                             <span>
-                                            <span  @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction()">
+                                                    <span  @click="reload" >
                                                 <router-link class="linksmagic text_decor" to="Criar_UserAgent">
                                                     Criar User Agent
                                                 </router-link>
                                             </span>
-                                            <span @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
                                                 <router-link class="linksmagic text_decor" to="Lista_UserAgent">
                                                     Lista de User Agents
                                                 </router-link>
@@ -395,12 +416,14 @@
                                             <span class="bolder">
                                                 &nbsp; Tipos de Conexão
                                             <span>
-                                            <span @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
                                                 <router-link class="linksmagic text_decor" to="Criar_Conexao">
                                                     Criar Tipo de Conexão
                                                 </router-link>
                                             </span>
-                                            <span @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                    <span @click="reload" >
                                                 <router-link class="linksmagic text_decor" to="Lista_Conexoes">
                                                         Lista de Conexões
                                                 </router-link>
@@ -411,12 +434,12 @@
                                             <span class="bolder">
                                                 &nbsp; Versões da API
                                             <span>
-                                            <span @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
                                                 <router-link class="linksmagic text_decor" to="Criar_NovaAPI">
                                                     Criar Nova Versão API
                                                 </router-link>
                                             </span>
-                                            <span @click="reload">
+                                            <span @click="reload" class="topo" onclick="topFunction('listversaoapi')">
                                                 <router-link class="linksmagic text_decor" to="Lista_NovaAPI">
                                                  Lista de Versões API
                                                 </router-link>
@@ -430,14 +453,18 @@
                                             <!-- <a href="" class="text_decor">
                                                 Criar Grupo Acesso
                                             </a> -->
-                                            <span @click="reload">
-                                                <router-link class="linksmagic text_decor" to="Criar_GrupoAcesso">
+                                            <span @click="reload" class="topo" onclick="topFunction()" >
+                                                <router-link id="criargrupoacesso" class="linksmagic text_decor" to="Criar_GrupoAcesso">
                                                         Criar Grupo Acesso
                                                 </router-link>
                                             </span>
-                                            <a href="" class="text_decor">
-                                                Lista de Grupos Acesso
-                                            </a>
+                                         
+                                                <span @click="reload" class="topo" onclick="topFunction()">
+                                                    <router-link class="linksmagic text_decor" to="Lista_GrupoAcesso" @click.native="$scrollToTop">
+                                                            Lista de Grupos Acesso
+                                                    </router-link>
+                                                </span>
+                                                
                                         </li>
                                     </ul>
                                 </li>
@@ -532,16 +559,11 @@
     <script src="js/clipboard_print_csv.js"></script>
     <script src="js/uploadnewimagem.js"></script>
     <script src="js/uploadimage.js"></script>
-    <!-- <script src="js/reload.js"></script> -->
     <script>
-        // window.onload = function () {window.location.reload()}
-        // $("div").stop();
-    //     function timedRefresh(timeoutPeriod) {
-	// setTimeout("location.reload(true);",timeoutPeriod);
-    // }
 
-    // window.onload = timedRefresh(1000);
-    // </script>
+ 
+    
+    </script>
 </body>
 
 </html>
