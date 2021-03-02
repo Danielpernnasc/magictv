@@ -1,5 +1,5 @@
 "use strict";
-(function($, window, document, undefined) {
+(function ($, window, document, undefined) {
 
 
     var pluginName = "metisMenu",
@@ -17,7 +17,7 @@
     }
 
     Plugin.prototype = {
-        init: function() {
+        init: function () {
             var $this = $(this.element),
                 $toggle = this.settings.toggle,
                 obj = this
@@ -32,7 +32,7 @@
             if (obj.settings.doubleTapToGo) {
                 $this.find("li.active").has("ul").children("a").addClass("doubleTapToGo");
             }
-            $this.find("li").has("ul").children("a").on("click", function(e) {
+            $this.find("li").has("ul").children("a").on("click", function (e) {
                 e.preventDefault();
                 //Do we need to enable the double tap
                 if (obj.settings.doubleTapToGo) {
@@ -55,20 +55,20 @@
                 }
             });
         },
-        isIE: function() { //https://gist.github.com/padolsey/527683
+        isIE: function () { //https://gist.github.com/padolsey/527683
             var undef,
                 v = 3,
                 div = document.createElement("div"),
                 all = div.getElementsByTagName("i");
             while (
                 div.innerHTML = "<!--[if gt IE " + (++v) + "]><i></i><![endif]-->",
-                all[0]
-            ) {
+                    all[0]
+                ) {
                 return v > 4 ? v : undef;
             }
         },
         //Enable the link on the second click.
-        doubleTapToGo: function(elem) {
+        doubleTapToGo: function (elem) {
             var $this = $(this.element);
             //if the class "doubleTapToGo" exists, remove it and return
             if (elem.hasClass("doubleTapToGo")) {
@@ -85,29 +85,28 @@
             }
         }
     };
-    $.fn[pluginName] = function(options) {
-        this.each(function() {
+    $.fn[pluginName] = function (options) {
+        this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
                 $.data(this, "plugin_" + pluginName, new Plugin(this, options));
             }
         });
         return this;
     };
-    $("#main li").hover(function() {
+    $("#main li").hover(function () {
         $(this).find("i.fa").css("transform", "rotateY(150deg)")
     })
 })(jQuery, window, document);
 //    ==========menu hover===============
 
-$('#messages').hover(function() {
+$('#messages').hover(function () {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
-}, function() {
+}, function () {
     $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
 });
-
 function menu_default() {
     if ($("body").hasClass("sidebar-left-hidden")) {
-        if ($("#content").height() < 950) {
+        if($("#content").height() < 950){
             $(".sidebar-left-hidden #left").addClass("sm_content");
         }
         $("#menu>li").has("ul").children("a").off("click").on("click", function(e) {
@@ -116,7 +115,7 @@ function menu_default() {
     } else {
         $("#left").removeClass("sm_content");
         $("#menu li").has("ul").children("a").off("click");
-        $("#menu").find("li").has("ul").children("a").on("click", function(e) {
+        $("#menu").find("li").has("ul").children("a").on("click", function (e) {
             e.preventDefault();
             $(this).parent("li").toggleClass("active").children("ul").collapse({
                 toggle: true,
@@ -128,7 +127,6 @@ function menu_default() {
         });
     }
 }
-
 $("#menu li:nth-child(2)").find("ul").removeClass("sidebarbottom");
 //        ======================
 // skins js
@@ -138,29 +136,29 @@ function loadjscssfile(filename, filetype) {
         fileref.rel = "stylesheet";
         fileref.type = "text/css";
         fileref.href = 'css/skins/' + filename;
-        $("#skin_change").attr("href", "css/skins/" + filename + "")
+        $("#skin_change").attr("href", "css/skins/"+filename+"")
     }
 }
 
 // End of skins js
 //    ======================================core js=======================================
-(function(window) {
+(function (window) {
     var
-    // Is Modernizr defined on the global scope
+        // Is Modernizr defined on the global scope
         Modernizr = typeof Modernizr !== "undefined" ? Modernizr : false,
         // whether or not is a touch device
         isTouchDevice = Modernizr ? Modernizr.touch : !!('ontouch' in window || 'onmsgesturechange' in window),
         // Are we expecting a touch or a click?
         buttonPressedEvent = (isTouchDevice) ? 'touch' : 'click',
-        Admire = function() {
+        Admire = function () {
             this.init();
         };
     // Initialization method
-    Admire.prototype.init = function() {
+    Admire.prototype.init = function () {
         this.isTouchDevice = isTouchDevice;
         this.buttonPressedEvent = buttonPressedEvent;
     };
-    Admire.prototype.getViewportHeight = function() {
+    Admire.prototype.getViewportHeight = function () {
         var docElement = document.documentElement,
             client = docElement.clientHeight,
             inner = window.innerHeight;
@@ -169,7 +167,7 @@ function loadjscssfile(filename, filetype) {
         else
             return client;
     };
-    Admire.prototype.getViewportWidth = function() {
+    Admire.prototype.getViewportWidth = function () {
         var docElement = document.documentElement,
             client = docElement.clientWidth,
             inner = window.innerWidth;
@@ -183,29 +181,22 @@ function loadjscssfile(filename, filetype) {
 })(this);
 // =====================resize plugin===================
 //  jQuery resize event - v1.1 - 3/14/2010
-(function($, h, c) {
-    var a = $([]),
-        e = $.resize = $.extend($.resize, {}),
-        i, k = "setTimeout",
-        j = "resize",
-        d = j + "-special-event",
-        b = "delay",
-        f = "throttleWindow";
+(function ($, h, c) {
+    var a = $([]), e = $.resize = $.extend($.resize, {}), i, k = "setTimeout", j = "resize", d = j + "-special-event", b = "delay", f = "throttleWindow";
     e[b] = 250;
     e[f] = true;
     $.event.special[j] = {
-        setup: function() {
+        setup: function () {
             if (!e[f] && this[k]) {
                 return false;
             }
             var l = $(this);
             a = a.add(l);
-            $.data(this, d, { w: l.width(), h: l.height() });
+            $.data(this, d, {w: l.width(), h: l.height()});
             if (a.length === 1) {
                 g();
             }
-        },
-        teardown: function() {
+        }, teardown: function () {
             if (!e[f] && this[k]) {
                 return false
             }
@@ -215,16 +206,14 @@ function loadjscssfile(filename, filetype) {
             if (!a.length) {
                 clearTimeout(i);
             }
-        },
-        add: function(l) {
+        }, add: function (l) {
             if (!e[f] && this[k]) {
                 return false
             }
             var n;
 
             function m(s, o, p) {
-                var q = $(this),
-                    r = $.data(this, d);
+                var q = $(this), r = $.data(this, d);
                 r.w = o !== c ? o : q.width();
                 r.h = p !== c ? p : q.height();
                 n.apply(this, arguments)
@@ -239,14 +228,10 @@ function loadjscssfile(filename, filetype) {
             }
         }
     };
-
     function g() {
-        i = h[k](function() {
-            a.each(function() {
-                var n = $(this),
-                    m = n.width(),
-                    l = n.height(),
-                    o = $.data(this, d);
+        i = h[k](function () {
+            a.each(function () {
+                var n = $(this), m = n.width(), l = n.height(), o = $.data(this, d);
                 if (m !== o.w || l !== o.h) {
                     n.trigger(j, [o.w = m, o.h = l])
                 }
@@ -256,7 +241,7 @@ function loadjscssfile(filename, filetype) {
     }
 })(jQuery, this);
 // =====================resize plugin end===============
-(function($) {
+(function ($) {
     var $navBar = $('nav.navbar'),
         $body = $('body'),
         $menu = $('#menu');
@@ -280,7 +265,7 @@ function loadjscssfile(filename, filetype) {
         if ($body.hasClass('menu-affix')) {
             $menu
                 .css({
-                    height: function() {
+                    height: function () {
                         return $(window).height();
                     },
                     top: bodyPadTop - 1,
@@ -289,17 +274,17 @@ function loadjscssfile(filename, filetype) {
         }
     }
 
-    Admire.navBar = function() {
+    Admire.navBar = function () {
         var resizeTimer;
         init();
-        $(window).resize(function() {
+        $(window).resize(function () {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(init(), 250);
         });
     };
     return Admire;
 })(jQuery);
-(function($, Admire) {
+(function ($, Admire) {
     var $body = $('body'),
         $leftToggle = $('.toggle-left'),
         $rightToggle = $('.toggle-right');
@@ -317,18 +302,13 @@ function loadjscssfile(filename, filetype) {
         color: "#ddd"
     }).html(" <i class='fa fa-fw fa-cog skin-icon'></i>").addClass("no-print");
     $body.append(demo);
-    $(".no-print").on("mouseenter mouseleave", function() {
+    $(".no-print").on("mouseenter mouseleave", function(){
         $(".skin-icon").toggleClass("fa-spin");
         return false;
     });
-    Admire.admireAnimatePanel = function() {
+    Admire.admireAnimatePanel = function () {
         if ($('#left').length) {
-            if ($(window).width() > 767) {
-                $body.addClass("sidebar-left-hidden");
-            } else {
-                $body.removeClass("sidebar-left-hidden");
-            }
-            $leftToggle.on(Admire.buttonPressedEvent, function(e) {
+            $leftToggle.on(Admire.buttonPressedEvent, function (e) {
                 // $(".toggle-left").on('click', function(e) {
                 if ($(window).width() < 768) {
                     $body.toggleClass('sidebar-left-opened');
@@ -342,23 +322,22 @@ function loadjscssfile(filename, filetype) {
         } else {
             $leftToggle.addClass('hidden');
         }
-        demo.on('click', function(e) {
+        demo.on('click', function (e) {
             $body.toggleClass("sidebar-right-opened");
         });
     };
     return Admire;
 })(jQuery, Admire || {});
-$(window).on("load", function() {
+$(window).on("load",function () {
     $('.preloader img').fadeOut();
     $('.preloader').fadeOut(1000);
 });
-$(document).ready(function() {
+$(document).ready(function () {
 
     $('[data-toggle="tooltip"]').tooltip();
     $('#menu').metisMenu();
     Admire.navBar();
     Admire.admireAnimatePanel();
-
     function _fix() {
         //Get window height and the wrapper height
         var height = $(window).height() - $("#top").height();
@@ -370,7 +349,8 @@ $(document).ready(function() {
             //then set sidebar height to the wrapper
             $("html, body").css("min-height", content + 0 + "px");
             $("#left").css("min-height", content + 2 + "px");
-        } else {
+        }
+        else {
             //Otherwise, set the sidebar to the height of the window
             $("html, body").css("min-height", height + 0 + "px");
             $("#left").css("min-height", height + 2 + "px");
@@ -386,7 +366,8 @@ $(document).ready(function() {
                 autoReinitialise: true,
                 autoReinitialiseDelay: 100
             });
-        } else {
+        }
+        else {
             $('.left_content').jScrollPane({
                 autoReinitialise: true,
                 autoReinitialiseDelay: 100
@@ -399,25 +380,25 @@ $(document).ready(function() {
     //Fix the fixed layout sidebar scroll bug
     fix_sidebar();
     //Fire when wrapper is resized
-    $(".wrapper").on("resize", function() {
+    $(".wrapper").on("resize",function () {
         _fix();
         fix_sidebar();
     });
 
-    $('#messages,#notifications').css("height", 220);
+    $('#messages,#notifications').css("height",220);
     $('#messages,#notifications').jScrollPane({
         autoReinitialise: true,
         autoReinitialiseDelay: 100
     });
 
-    $("#request_btn, #notifications_section, #messages_section").on("click", function() {
+    $("#request_btn, #notifications_section, #messages_section").on("click", function () {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        $('#request_list, #notifications_dropdown, #messages_dropdown').addClass('animated fadeIn').one(animationEnd, function() {
+        $('#request_list, #notifications_dropdown, #messages_dropdown').addClass('animated fadeIn').one(animationEnd, function () {
             $("#request_list, #notifications_dropdown, #messages_dropdown").removeClass('animated fadeIn');
         });
     });
 
-    $("#menu>.dropdown_menu").hover(function() {
+    $("#menu>.dropdown_menu").hover(function () {
         var sideoffset = $("#menu").offset();
         var submenuoffset = $(this).children("ul").offset();
         if (sideoffset.top + $("#menu").height() < submenuoffset.top + $(this).children("ul").height()) {
@@ -425,46 +406,46 @@ $(document).ready(function() {
         }
     });
 
-    //    ============================fading effect=======
+//    ============================fading effect=======
 
-    //    ==========================Different cards=====================
-    //        Card close
-    $('.card-header .fa-close').on('click', function() {
+//    ==========================Different cards=====================
+//        Card close
+    $('.card-header .fa-close').on('click', function () {
         $(this).closest('.card').parent().hide('slow');
     });
-    //        Card toggle
-    $(".card-header .fa-chevron-up").on("click", function() {
+//        Card toggle
+    $(".card-header .fa-chevron-up").on("click",function () {
         $(this).closest('.card').find('.card-body').slideToggle();
         $(this).toggleClass("fa-chevron-up").toggleClass("fa-chevron-down");
     });
 
-    //        Card edit
-    (function($) {
+//        Card edit
+    (function($){
         $.fn.setCursorToTextEnd = function() {
             var $initialVal = this.val();
             this.val($initialVal);
         };
     })(jQuery);
-    $(".card-header .fa-pencil").on('click', function(e) {
-        var edit = $(this).closest('.card').find('.card-header .card-title').text();
+    $(".card-header .fa-pencil").on('click',function(e){
+        var edit=$(this).closest('.card').find('.card-header .card-title').text();
         var editable = $(this).closest('.card').find('.card-header');
         var editBox = "<div class='card_editbox'><input type='text' class='form-control text_for_save' maxlength='20' value='" + edit + "'></div>";
-        if (!$(this).hasClass("fa-check")) {
+        if(!$(this).hasClass("fa-check")){
             editable.after(editBox);
             $(this).closest('.card').find("input").focus().setCursorToTextEnd();
-        } else {
+        }else{
             $(this).closest(".card").find(".card_editbox").remove();
         }
         $(this).toggleClass('fa-check').toggleClass('fa-pencil');
     });
-    $(".card").on("input", ".text_for_save", function() {
+    $(".card").on("input",".text_for_save",function(){
         $(this).closest('.card').find('.card-header .card-title').text($(this).val());
     });
 
-    //        Card colors
-    $(".card-header .fa-tint").on('click', function() {
-        var colorpick = $(this).closest('.card').find('.card-header');
-        var headerColor = '<div class="header_colors">' +
+//        Card colors
+    $(".card-header .fa-tint").on('click',function () {
+        var colorpick=$(this).closest('.card').find('.card-header');
+        var headerColor='<div class="header_colors">' +
             '<div class="inline_table"><div class="bg-primary" data-color="bg-primary"></div></div>' +
             '<div class="inline_table"><div class="bg-success" data-color="bg-success"></div></div>' +
             '<div class="inline_table"><div class="bg-warning" data-color="bg-warning"></div></div>' +
@@ -472,40 +453,40 @@ $(document).ready(function() {
             '<div class="inline_table"><div class="bg-info" data-color="bg-info"></div></div>' +
             '<div class="inline_table"><div class="bg-mint" data-color="bg-mint"></div></div>' +
             '<div class="inline_table"><div class="bg-white" data-color="bg-white"></div></div></div>'
-        if ($(this).hasClass("fa-tint")) {
+        if($(this).hasClass("fa-tint")){
             colorpick.after(headerColor);
-        } else {
+        }else{
             $(this).closest(".card").find('.header_colors').hide('slow');
         }
-        $(".header_colors").each(function() {
-            $(this).find('.inline_table div').on('click', function() {
-                $(this).closest('.card').find('.card-header').removeClass().addClass("card-header " + $(this).attr("data-color"));
+        $(".header_colors").each(function () {
+            $(this).find('.inline_table div').on('click',function () {
+                $(this).closest('.card').find('.card-header').removeClass().addClass("card-header "+$(this).attr("data-color"));
             });
         });
         $(this).toggleClass("fa-tint").toggleClass("fa-file-image-o");
     });
 
-    //        Full screen
-    $(".card-header .fa-arrows-alt").on('click', function() {
+//        Full screen
+    $(".card-header .fa-arrows-alt").on('click',function () {
         $(this).closest('.card').toggleClass('fullscreen');
     });
 
     //        Card Refreshing
-    $(".card_refresh").on("click", function() {
+    $(".card_refresh").on("click",function(){
         var card = $(this).parents(".card");
         card_refresh(card);
-        setTimeout(function() {
+        setTimeout(function(){
             card_refresh(card);
-        }, 2000);
+        },2000);
     });
 
-    function card_refresh(card) {
-        if (!card.hasClass("card-refreshing")) {
+    function card_refresh(card){
+        if(!card.hasClass("card-refreshing")){
             card.append('<div class="card_refresh_section"><img src="img/loader.gif"/></div>');
             card.find(".card_refresh_section").width(card.width()).height(card.height());
             card.addClass("card-refreshing");
 
-        } else {
+        }else{
             card.find(".card_refresh_section").remove();
             card.removeClass("card-refreshing");
         }
@@ -513,36 +494,35 @@ $(document).ready(function() {
     // =============================== Right side bar =======================
 
     function scroll_fixtop() {
-        var rightHeightTop = $(window).height() - top.height();
-        $(".request_scrollable").css("height", rightHeightTop+20);
+        var rightHeightTop=$(window).height() - top.height();
+        $(".request_scrollable").css("height", rightHeightTop);
     }
-
     function scroll_fixtop2() {
-        var rightHeightTop2 = $(window).height();
-        $(".request_scrollable").css("height", rightHeightTop2+20);
+        var rightHeightTop2=$(window).height() ;
+        $(".request_scrollable").css("height", rightHeightTop2);
 
     }
 
-    function fixed_menu_scroll() {
-        if ($("body").hasClass("fixedNav_position")) {
-            var leftHeight = $(window).height() - $("#top").height();
-            $('.left_scrolled').css("height", leftHeight);
+    function fixed_menu_scroll(){
+        if($("body").hasClass("fixedNav_position")){
+            var leftHeight=$(window).height()-$("#top").height();
+            $('.left_scrolled').css("height",leftHeight);
             $('.left_scrolled').jScrollPane({
                 autoReinitialise: true,
                 autoReinitialiseDelay: 100
             });
-        } else {
-            var leftHeight = $(window).height();
-            $('.left_scrolled').css("height", leftHeight);
+        }else{
+            var leftHeight=$(window).height();
+            $('.left_scrolled').css("height",leftHeight);
             $('.left_scrolled').jScrollPane({
                 autoReinitialise: true,
                 autoReinitialiseDelay: 100
             });
-            var content_height = $("#content").height();
-            var window_height = $(window).height();
-            if (window_height > content_height) {
-                var leftHeight = $(window).height() - $("#top").height();
-                $('.left_scrolled').css("height", leftHeight);
+            var content_height=$("#content").height();
+            var window_height=$(window).height();
+            if(window_height>content_height){
+                var leftHeight=$(window).height()-$("#top").height();
+                $('.left_scrolled').css("height",leftHeight);
                 $('.left_scrolled').jScrollPane({
                     autoReinitialise: true,
                     autoReinitialiseDelay: 100
@@ -551,7 +531,6 @@ $(document).ready(function() {
         }
 
     }
-
     function fixed_menu_scroll2() {
 
         var element = $('.menu_scroll').jScrollPane();
@@ -559,7 +538,8 @@ $(document).ready(function() {
         api.destroy();
         $(".menu_scroll").removeAttr("style");
 
-        if (left_height_unfixed > $("#content").height()) {
+        if(left_height_unfixed > $("#content").height())
+        {
             $("#left").css("min-height", left_height_unfixed);
 
         }
@@ -567,30 +547,27 @@ $(document).ready(function() {
     var top = $("#top");
     var left = $("#left");
     var body = $("body");
-    var input = $("input");
-    var fixedNav = $('#setting_fixed_nav').find(input);
-    var fixedMenu = $('#setting_fixed_menunav').find(input);
-    var breadcrumb = $('#setting_breadcrumb').find(input);
+    var input=$("input");
+    var fixedNav=$('#setting_fixed_nav').find(input);
+    var fixedMenu=$('#setting_fixed_menunav').find(input);
+    var breadcrumb=$('#setting_breadcrumb').find(input);
     fixedNav.lc_switch();
     fixedMenu.lc_switch();
     breadcrumb.lc_switch();
-
     function top_resize() {
-        var topHeight = top.height();
+        var topHeight=top.height();
         $("#request_list").css("padding-top", topHeight);
     }
     top_resize();
-    $("#top").on("resize", function() {
+    $("#top").on("resize",function () {
         top_resize();
     });
-
-    function right_fix() {
-        var rightHeight = $(window).height();
+    function right_fix(){
+        var rightHeight=$(window).height();
         $(".request_scrollable").css("height", rightHeight)
     }
-
     function scroll_fix() {
-        var rightHeight = $(window).height() - top.height() - 30;
+        var rightHeight=$(window).height() - top.height()-30;
         $('.request_scrollable').jScrollPane({
             autoReinitialise: true,
             autoReinitialiseDelay: 100
@@ -598,75 +575,77 @@ $(document).ready(function() {
     }
     right_fix();
     scroll_fix();
-    $(window).on("resize", function() {
+    $(window).on("resize",function () {
         right_fix();
         scroll_fix();
     });
-    $("#request_btn").on("click", function() {
+    $("#request_btn").on("click", function () {
         body.toggleClass("right_menu_section");
     });
-    if ($(window).width() > 767) {
-        breadcrumb.on('lcs-statuschange', function() {
+    if($(window).width()>767) {
+        breadcrumb.on('lcs-statuschange', function () {
             $(".head").toggleClass("breadcrumb_hide");
-            if ($("#setting_fixed_menunav .lcs_switch").hasClass("lcs_off")) {
+            if($("#setting_fixed_menunav .lcs_switch").hasClass("lcs_off")){
                 $(".menu_scroll").removeClass("left_scrolled");
             }
         });
-        fixedNav.on('lcs-statuschange', function() {
+        fixedNav.on('lcs-statuschange', function () {
             $("#top").toggleClass("fixed");
             $(".wrapper").toggleClass("fixedNav_top");
             body.toggleClass("fixedNav_position");
-            if ($("#top").hasClass("fixed")) {
+            if($("#top").hasClass("fixed")){
                 $(".menu_scroll").removeClass("left_scrolled");
                 scroll_fixtop();
-                $(window).on("resize", function() {
+                $(window).on("resize",function () {
                     scroll_fixtop();
                 });
-            } else {
+            }
+            else{
                 scroll_fixtop2();
-                $(window).on("resize", function() {
+                $(window).on("resize",function () {
                     scroll_fixtop2();
                 });
             }
         });
-
         var left_height_unfixed = $("#left").height();
-        fixedMenu.on('lcs-statuschange', function() {
+        fixedMenu.on('lcs-statuschange', function () {
             $("#left").toggleClass("fixed");
             body.toggleClass("fixedMenu_left");
             $("#left.fixed").find(".menu_scroll").addClass("left_scrolled");
             if (body.hasClass("fixedMenu_left")) {
                 fixed_menu_scroll();
-                $(window).on("resize", function() {
+                $(window).on("resize",function() {
                     fixed_menu_scroll();
                 });
-                fixedNav.on('lcs-statuschange', function() {
-                    if ($("body").hasClass("fixedNav_position")) {
-                        var leftHeight11 = $(window).height() - $("#top").height();
-                        $('.menu_scroll').css("height", leftHeight11);
-                    } else {
-                        var leftHeight11 = $(window).height();
-                        $('.menu_scroll').css("height", leftHeight11);
+                fixedNav.on('lcs-statuschange', function () {
+                    if($("body").hasClass("fixedNav_position")){
+                        var leftHeight11=$(window).height()-$("#top").height();
+                        $('.menu_scroll').css("height",leftHeight11);
+                    }else{
+                        var leftHeight11=$(window).height();
+                        $('.menu_scroll').css("height",leftHeight11);
                     }
                 });
-            } else {
-                fixedNav.on('lcs-statuschange', function() {
+            }
+            else {
+                fixedNav.on('lcs-statuschange', function () {
                     // $('.menu_scroll').css("height", "");
                     $('.menu_scroll').removeAttr('style');
                 });
                 fixed_menu_scroll2();
-                $(window).on("resize", function() {
+                $(window).on("resize",function() {
                     fixed_menu_scroll2();
                 });
             }
         });
     }
-    $(window).on("scroll", function() {
-        var window_height = $(window).height();
+
+    $(window).on("scroll", function () {
+        var window_height= $(window).height();
         $("#content").css("min-height", window_height);
-        if ($("#top").hasClass("fixed")) {
-            scroll_fixtop();
-        } else {
+        if($("#top").hasClass("fixed")){
+            scroll_fixtop()
+        }else{
             request_scrollable_default();
         }
         if ($(this).scrollTop() > 50) {
@@ -684,33 +663,31 @@ $(document).ready(function() {
     });
     // fixed header
     var top = $("#top");
-
-    function request_scrollable_default() {
-        var rightHeightTop2 = $(window).height();
+    function request_scrollable_default(){
+        var rightHeightTop2=$(window).height();
         $(".request_scrollable").css("height", rightHeightTop2+20);
     }
-
     function scroll_fixtop() {
-        var rightHeightTop = $(window).height() - top.height();
+        var rightHeightTop=$(window).height() - top.height();
         $(".request_scrollable").css("height", rightHeightTop+20)
     }
     scroll_fixtop();
-    $(window).on("resize", function() {
+    $(window).on("resize",function () {
         scroll_fixtop();
         request_scrollable_default();
     });
     // Fixed menu
     function fixed_menu_scroll() {
-        if ($("body").hasClass("fixedNav_position")) {
-            var leftHeight = $(window).height() - $("#top").height();
-            $('.left_scrolled').css("height", leftHeight);
+        if($("body").hasClass("fixedNav_position")){
+            var leftHeight=$(window).height()-$("#top").height();
+            $('.left_scrolled').css("height",leftHeight);
             $('.left_scrolled').jScrollPane({
                 autoReinitialise: true,
                 autoReinitialiseDelay: 100
             });
-        } else {
-            var leftHeight = $(window).height();
-            $('.left_scrolled').css("height", leftHeight);
+        }else{
+            var leftHeight=$(window).height();
+            $('.left_scrolled').css("height",leftHeight);
             $('.left_scrolled').jScrollPane({
                 autoReinitialise: true,
                 autoReinitialiseDelay: 100
@@ -718,19 +695,19 @@ $(document).ready(function() {
         }
     }
     fixed_menu_scroll();
-    $(window).on("resize", function() {
+    $(window).on("resize", function () {
         fixed_menu_scroll();
     });
 
-    if ($("body").hasClass("fixedMenu_left")) {
-        $('#setting_fixed_nav').find('input').on('lcs-statuschange', function() {
+    if($("body").hasClass("fixedMenu_left")) {
+        $('#setting_fixed_nav').find('input').on('lcs-statuschange', function () {
             if ($("body").hasClass("fixedNav_position")) {
                 if ($("#top").hasClass("fixed")) {
                     var leftHeight_fixednav = $(window).height() - $("#top").height();
                     $('.menu_scroll').css("height", leftHeight_fixednav);
                     $('.menu_scroll').css("min-height", leftHeight_fixednav);
                 }
-            } else {
+            }else{
                 var leftHeight_withoutfixednav = $(window).height();
                 $('.menu_scroll').css("height", leftHeight_withoutfixednav);
             }

@@ -108,3 +108,9 @@
         visibility: visible !important;
     }
 }
+
+@media (max-width: 768px) {
+    #animate_in, #animate_out {
+        width: 70% !important;
+    }
+}
